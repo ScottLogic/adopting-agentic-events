@@ -1,8 +1,8 @@
-# Beyond the Hype — Event Website
+# Adopting Agentic — Event Website
 
-Landing page for the **Beyond the Hype** event series, hosted by [Scott Logic](https://www.scottlogic.com).
+Landing page for the **Adopting Agentic* event series, hosted by [Scott Logic](https://www.scottlogic.com).
 
-**Live site:** https://scottlogic.github.io/beyond-the-hype-event/
+**Live site:** https://adoptingagentic.events/
 
 ---
 

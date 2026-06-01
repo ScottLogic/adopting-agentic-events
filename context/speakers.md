@@ -18,21 +18,17 @@ Goldratt's Theory of Constraints tells us that speeding up one part of a system 
 
 Drawing on hands-on work with engineering leaders at companies from 30 to 300 people, I'll share what's happening to team structures as coding stops being the bottleneck. The talk covers the central choice every engineering organisation faces right now, between hybridisation (AI-powered solo contributors) and amplification (smaller, smarter teams), and why those paths lead somewhere different. I'll sketch what amplified future product teams look like, how platform and enabling teams evolve in this world, and things you can act on now.
 
-## Engineering skills for the future 
+## Build Boldly - AI Adoption in Engineering
 
 Rhea Sam, AI Adoption Specialist
 
-Rhea explores the frontline of AI adoption where technology meets human transformation. She'll unpack why mindset shapes action: when we act from fear, we build defensively; when we see AI as opportunity, we build boldly. 
-
-This session goes beyond theory to introduce the Champions model: a practical framework for embedding AI into workspaces through trained practitioners who experiment, validate, and scale what works. You'll see how top-down standards and bottom-up community adoption work together to cross the GenAI divide. 
+Rhea explores AI adoption from the frontline, where technology meets the humans building it. This session is for engineering audiences navigating what AI actually means for how they work, not just what tools they use.
  
-Key takeaways: 
-• The mindset shift from fear to opportunity and why it matters for adoption 
-• How to escape the POC trap and move AI from pilot to production 
-• The Champions framework: Building and learning through community 
-• Strategies for fostering trust, curiosity, and sustainable momentum 
+We start with the real question: as AI reshapes the landscape, what does engineering actually look like today and where is it heading?
  
-Whether you're leading AI transformation or navigating it from within a team, you'll leave with actionable insights for the people side of AI adoption. 
+This session goes beyond theory to examine the people and change behaviour driving or stalling, AI adoption in engineering teams. When teams act from fear, they build defensively. When they see AI as an opportunity, they build boldly. The difference isn't capability. It's mindset.
+ 
+You'll be introduced to a practical framework for embedding AI through trained practitioners who experiment, validate, and scale what works and how leaders can set direction while practioners make it reality on the ground.
 
 ## Talk title TBD
 

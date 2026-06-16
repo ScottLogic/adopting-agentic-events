@@ -30,6 +30,8 @@ This session goes beyond theory to examine the people and change behaviour drivi
  
 You'll be introduced to a practical framework for embedding AI through trained practitioners who experiment, validate, and scale what works and how leaders can set direction while practioners make it reality on the ground.
 
-## Talk title TBD
+## Hard, honest, in progress: agentic development in the trenches
 
 Richard Thorpe, Head of Engineering, FE fundinfo
+
+Eighteen months ago we went all in on agentic development at FE fundinfo. Today 95% of our engineers use AI every week and 68% of merged pull requests are agent authored. The journey looked nothing like the neat adoption curve. In this talk I share three stories from the trenches: the in-house tool we built, shut down and still count among our best decisions, the adoption plateau that looked like failure, and the leaders who emerged from places nobody predicted.

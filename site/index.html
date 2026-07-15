@@ -113,7 +113,7 @@
       font-weight: 500;
       line-height: 1.15;
       letter-spacing: -0.02em;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero h1 .word {
@@ -130,50 +130,20 @@
 
     .accent { color: var(--accent); }
 
-    /* ─── Countdown ─── */
-    .countdown {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-    }
-
-    .countdown-unit {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 0.5rem;
-      text-align: center;
-      backdrop-filter: blur(6px);
-    }
-
-    .countdown-unit .num {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      font-variant-numeric: tabular-nums;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-      transform-origin: center;
-    }
-
-    .countdown-unit .num.flip {
-      animation: num-flip 0.3s ease-in-out;
-    }
-
-    @keyframes num-flip {
-      0%  { transform: scaleY(1); }
-      40% { transform: scaleY(0); }
-      60% { transform: scaleY(0); }
-      100%{ transform: scaleY(1); }
-    }
-
-    .countdown-unit .label {
-      font-size: 0.65rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    /* ─── Past event note ─── */
+    .event-past-note {
+      font-size: 1rem;
       color: var(--text-muted);
+      line-height: 1.5;
     }
+
+    .event-past-note a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .event-past-note a:hover { color: var(--text); }
 
     /* ─── Motif + radar ─── */
     .motif-wrap {
@@ -273,50 +243,18 @@
 
     .pitch-em { color: var(--text); }
 
-    .cta-wrap { margin-top: 40px; text-align: center; }
-
-    .btn {
-      display: inline-block;
-      position: relative;
-      overflow: hidden;
-      background: var(--cta);
-      color: #fff;
-      font-weight: 600;
-      font-size: 1rem;
-      padding: 14px 36px;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 0 24px var(--cta-glow);
-    }
-
-    .btn::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 60%; height: 100%;
-      background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.35) 50%, transparent 80%);
-      transform: skewX(-15deg);
-      transition: left 0s;
-    }
-
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 4px 32px var(--cta-glow); }
-    .btn:hover::after { left: 160%; transition: left 0.55s ease; }
-
-    button.btn { border: none; cursor: pointer; font-family: var(--font-sans); }
-
-    /* ─── Speakers section ─── */
+    /* ─── Talks section ─── */
     .speakers-section {
       padding: 80px 0;
     }
 
     .speakers-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 24px;
+      grid-template-columns: 1fr;
+      gap: 32px;
     }
 
-    /* ─── Speaker cards ─── */
+    /* ─── Talk cards ─── */
     .speaker-card {
       background: rgba(47, 47, 47, 0.7);
       border: 1px solid var(--border);
@@ -338,47 +276,11 @@
       transform: translateY(0);
     }
 
-    .speaker-card.tbd {
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .speaker-card.tbd.visible {
-      opacity: 0.45;
-    }
-
-    .speaker-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .speaker-img {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--border);
-      flex-shrink: 0;
-    }
-
-    .speaker-img-placeholder {
-      width: 64px; height: 64px;
-      border-radius: 50%;
-      background: var(--surface-2);
-      border: 2px dashed var(--border);
-      flex-shrink: 0;
-    }
-
-    .speaker-name {
+    .speaker-heading {
+      font-size: 1.15rem;
       font-weight: 600;
-      font-size: 1rem;
       color: var(--text);
-    }
-
-    .speaker-org {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      margin-top: 2px;
+      line-height: 1.3;
     }
 
     .talk-title {
@@ -388,35 +290,29 @@
       line-height: 1.3;
     }
 
+    /* ─── YouTube embed ─── */
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: var(--radius);
+    }
+
     .talk-summary {
       font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.6;
     }
-
-    .talk-full {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      display: none;
-      margin-top: 8px;
-    }
-
-    .talk-expand-btn {
-      background: none;
-      border: none;
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-family: var(--font-sans);
-      cursor: pointer;
-      padding: 4px 0 0;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    .talk-expand-btn:hover { color: var(--text); }
-
-    .talk-full p + p { margin-top: 0.75em; }
 
     /* ─── Footer ─── */
     footer {
@@ -464,7 +360,6 @@
       .topbar { padding: 1rem 1.25rem; }
       .topbar-logo img { height: 22px; }
       .topbar-event img { height: 28px; }
-      .speakers-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -487,13 +382,7 @@
     <div class="hero-grid">
       <div class="hero-left">
         <h1 id="hero-title" aria-label="Adopting Agentic: Software Engineering for the AI Age">Adopting Agentic: Software Engineering for the AI Age</h1>
-        <div class="countdown" id="countdown" aria-hidden="true">
-          <div class="countdown-unit"><span class="num" id="cd-days">--</span><span class="label">Days</span></div>
-          <div class="countdown-unit"><span class="num" id="cd-hours">--</span><span class="label">Hours</span></div>
-          <div class="countdown-unit"><span class="num" id="cd-mins">--</span><span class="label">Mins</span></div>
-          <div class="countdown-unit"><span class="num" id="cd-secs">--</span><span class="label">Secs</span></div>
-        </div>
-        <p class="sr-only">Event date: 30 June 2026</p>
+        <p class="event-past-note">Our 30 June 2026 event has taken place. Watch the recorded talks below.</p>
       </div>
       <div class="hero-right">
         <div class="motif-wrap" aria-hidden="true">
@@ -506,11 +395,11 @@
     </div>
   </section>
 
-  <p class="event-date"><time datetime="2026-06-30">30 June 2026</time> &nbsp;|&nbsp; 5pm&ndash;9pm</p>
-  <p class="event-venue">Techspace, London EC2</p>  
+  <p class="event-date"><time datetime="2026-06-30">30 June 2026</time></p>
+  <p class="event-venue">Techspace, London EC2</p>
 
-  <!-- Elevator Pitch -->
-  <section class="pitch-section" id="signup">
+  <!-- About -->
+  <section class="pitch-section" id="about">
     <div class="container">
       <h2 class="section-title" aria-label="The moment everything changes" style="text-align:center; margin-bottom:32px;">The moment everything changes</h2>
       <p class="pitch-text">
@@ -522,138 +411,144 @@
       <p class="pitch-text" style="margin-top:16px;">
         We need to reshape our processes: away from ones designed around human strengths and weaknesses,
         towards new ones shaped around the strengths and weaknesses of AI.
-        There are a great many important questions that we don’t have answers to &ndash; yet.
+        There are a great many important questions that we don't have answers to &ndash; yet.
       </p>
       <p class="pitch-text" style="margin-top:16px;">
-        Join us for an evening of talks from practitioners and conversations with your peers
-        to share experiences, learn together, and start forming a picture of what our future looks like.
+        We welcomed practitioners and peers for an evening of talks and conversations to share
+        experiences, learn together, and start forming a picture of what our future looks like.
       </p>
-      <div class="cta-wrap">
-        <noscript><a href="https://rethinking-software-engineering-ai-age.eventbrite.co.uk" rel="noopener noreferrer" target="_blank" class="btn">Register your interest &rarr;</a></noscript>
-        <button id="eventbrite-widget-modal-trigger-1985730555546" type="button" class="btn">Reserve a spot &rarr;</button>
-      </div>
     </div>
   </section>
 
-  <!-- Speakers -->
-  <section class="speakers-section">
+  <!-- Recordings -->
+  <section class="speakers-section" id="recordings">
     <div class="container">
-      <p class="section-label" style="text-align:center;" aria-hidden="true">Speakers</p>
-      <h2 class="section-title" aria-label="Hear from the practitioners" style="text-align:center;">Hear from the practitioners</h2>
+      <p class="section-label" style="text-align:center;" aria-hidden="true">Recordings</p>
+      <h2 class="section-title" aria-label="Watch the talks" style="text-align:center;">Watch the talks</h2>
 
       <div class="speakers-grid">
 
         <div class="speaker-card">
-          <div class="speaker-header">
-            <img class="speaker-img" src="assets/cparsons.jpeg" alt="Chris Parsons" />
-            <div>
-              <div class="speaker-name">Chris Parsons</div>
-              <div class="speaker-org">CTO &amp; Founder</div>
-            </div>
+          <h3 class="speaker-heading">Colin Eberhardt, CTO, Scott Logic</h3>
+          <div class="talk-title">Introduction to Adopting Agentic Software Engineering for the AI Age</div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/pvecT3tFaeM"
+              title="Colin Eberhardt — Introduction to Adopting Agentic Software Engineering for the AI Age"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
           </div>
+          <div class="talk-summary">
+            Colin traces the evolution of AI-assisted development from GitHub Copilot&rsquo;s line-by-line completions
+            to agentic, asynchronous workflows, arguing that software development has shifted from writing code to
+            directing systems that produce it. The economics of code have changed: generation is approaching zero cost
+            under the right conditions, but creating the <em>right</em> code remains as hard as ever. Every process
+            built around human strengths and weaknesses now needs rebuilding around the strengths and weaknesses of AI.
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <h3 class="speaker-heading">Rhea Sam, AI Adoption Specialist, Valtech</h3>
+          <div class="talk-title">Build Boldly: AI Adoption in Engineering</div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/A3fUdBhG1xI"
+              title="Rhea Sam — Build Boldly: AI Adoption in Engineering"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="talk-summary">
+            Rhea argues that the gap between headline AI adoption statistics and meaningful organisational change is
+            almost entirely a people and culture problem: 41% of workers receive zero guidance on AI use, which drives
+            unsafe shadow AI behaviour. She outlines a Champions framework for closing the fluency gap, where peer
+            advocates run honest enablement sessions, document what works, and build reusable workflows from real
+            projects. Her key shift: measure outcome metrics (confidence scores, time saved, productivity gains),
+            not activity metrics like PRs shipped or licence usage.
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <h3 class="speaker-heading">Chris Price, Principal Architect, Scott Logic</h3>
+          <div class="talk-title">Why You Shouldn&rsquo;t Add MCP to an Arcade Machine</div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/Po2zBet6IMc"
+              title="Chris Price — Why You Shouldn't Add MCP to an Arcade Machine"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="talk-summary">
+            Chris uses a live demo of an AI agent controlling a real coin-pusher arcade machine (connected via an MCP
+            server) to explore a spectrum from low-level generic tools to a fully algorithmic solution. The central
+            insight: &ldquo;if all you have is an AI budget, everything starts to look like an agent.&rdquo; He cautions
+            against incentivising AI utilisation over solution fitness. The punchline: the reason not to add MCP to an
+            arcade machine is the Gambling Act 2005.
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <h3 class="speaker-heading">Richard Thorpe, Head of Engineering, FE fundinfo</h3>
+          <div class="talk-title">Hard, Honest, In Progress: Agentic Development in the Trenches</div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/PyfKUDcNxMo"
+              title="Richard Thorpe — Hard, Honest, In Progress: Agentic Development in the Trenches"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="talk-summary">
+            Richard gives a candid account of 24 months of agentic AI adoption across a 200-person engineering
+            organisation, including building and deliberately retiring a bespoke multi-agent tool when GitHub Copilot
+            shipped equivalent functionality. He frames that decision as one of their biggest wins. Adoption curves
+            plateau repeatedly, he warns; it takes deliberate new triggers to re-energise teams. Unexpectedly, QA
+            engineers and BAs have led the most creative AI tooling work, now driving SDLC improvements.
+          </div>
+        </div>
+
+        <div class="speaker-card">
+          <h3 class="speaker-heading">Chris Parsons, CTO &amp; Founder</h3>
           <div class="talk-title">Vision for an AI-First Product Organisation</div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/ozw2x2sWZgs"
+              title="Chris Parsons — Vision for an AI-First Product Organisation"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
           <div class="talk-summary">
-            When AI makes code cheap to produce, what happens to the organisations built to produce it?
-            Drawing on Goldratt's Theory of Constraints and hands-on work with engineering leaders, this
-            talk explores the structural shifts underway as coding stops being the bottleneck, and the
-            central choice every engineering organisation now faces.
+            Chris applies the Theory of Constraints to explain why individual developers reporting 2&ndash;3&times;
+            speed improvements rarely translate into equivalent team-level gains: coding was typically not the
+            bottleneck. He distinguishes two responses: hybridisation (everyone does everything, outsourcing judgment)
+            versus amplification (smaller, smarter expert teams each enhanced by AI). AI-first organisations should
+            amplify small teams, not blur roles. AI handles artefact creation; humans focus on judgment and customer
+            understanding.
           </div>
-          <div class="talk-full">
-            <p>Most AI conversations at engineering events focus on tools, models, and what's coming next.
-            This talk asks a harder question: when AI makes artefacts cheap to produce, what happens to
-            the organisations we built to produce them?</p> 
-            <p>Goldratt's Theory of Constraints tells us that
-            speeding up one part of a system doesn't make the system faster; it moves the bottleneck
-            somewhere else. If you've made coding faster but your organisation isn't shipping faster,
-            coding wasn't the constraint. The queue has simply moved somewhere else, and in many
-            organisations it's getting longer.</p> 
-            <p>Drawing on hands-on work with engineering leaders at
-            companies from 30 to 300 people, I'll share what's happening to team structures as coding
-            stops being the bottleneck. The talk covers the central choice every engineering organisation
-            faces right now, between hybridisation (AI-powered solo contributors) and amplification
-            (smaller, smarter teams), and why those paths lead somewhere different.</p>
-          </div>
-          <button class="talk-expand-btn" aria-expanded="false">Read more</button>
         </div>
 
         <div class="speaker-card">
-          <div class="speaker-header">
-            <img class="speaker-img" src="assets/rthorpe.jpeg" alt="Richard Thorpe" />
-            <div>
-              <div class="speaker-name">Richard Thorpe</div>
-              <div class="speaker-org">Head of Engineering, FE fundinfo</div>
-            </div>
+          <h3 class="speaker-heading">Panel Discussion, moderated by Colin Eberhardt</h3>
+          <div class="talk-title">Adopting Agentic Software Engineering for the AI Age</div>
+          <div class="video-wrap">
+            <iframe
+              src="https://www.youtube.com/embed/NleLdtrgP-Y"
+              title="Panel Discussion — Adopting Agentic Software Engineering for the AI Age"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
           </div>
-          <div class="talk-title">Hard, honest, in progress: agentic development in the trenches</div>
           <div class="talk-summary">
-            Eighteen months ago FE fundinfo went all in on agentic development. Today 95% of engineers
-            use AI every week and 68% of merged pull requests are agent authored. The journey looked
-            nothing like the neat adoption curve.
+            The panel covered three topics: the future of junior engineers, measuring value vs. velocity, and AI
+            sovereignty. On juniors: a short-term hiring dip is likely, but juniors will adapt. Seniors who refuse
+            to change are more at risk. On metrics: PRs work as a proxy, but never as an individual target. On
+            sovereignty: diversify across providers, avoid single-model dependence, and seriously evaluate
+            open-weights alternatives. The gap between open-weights and frontier models has narrowed to roughly
+            two months.
           </div>
-          <div class="talk-full">
-            <p>Eighteen months ago we went all in on agentic development at FE fundinfo. Today 95% of
-            our engineers use AI every week and 68% of merged pull requests are agent authored. The
-            journey looked nothing like the neat adoption curve.</p>
-            <p>In this talk I share three stories from the trenches: the in-house tool we built, shut
-            down and still count among our best decisions, the adoption plateau that looked like failure,
-            and the leaders who emerged from places nobody predicted.</p>
-          </div>
-          <button class="talk-expand-btn" aria-expanded="false">Read more</button>
-        </div>
-
-                <div class="speaker-card">
-          <div class="speaker-header">
-            <img class="speaker-img" src="assets/cprice.jpeg" alt="Chris Price" />
-            <div>
-              <div class="speaker-name">Chris Price</div>
-              <div class="speaker-org">Principal Architect, Scott Logic</div>
-            </div>
-          </div>
-          <div class="talk-title">Why you shouldn't add MCP to an arcade machine</div>
-          <div class="talk-summary">
-            A fast-paced dive into hacking a classic coin-pusher arcade machine: wiring it up to AI,
-            adding remote control through VS Code, and discovering what happens when cutting-edge tools
-            meet old-school hardware. Expect unexpected challenges, creative engineering, and the
-            unmistakable thrill of an experiment that probably shouldn't work.
-          </div>
-          <div class="talk-full">
-            Dive into the secret world of arcade machines as Chris hacks a classic coin-pusher, wiring it up
-            to AI and unleashing remote control through Visual Studio Code. Discover the ingenious tricks behind
-            game design, the wild challenges of blending hardware, firmware, and cutting-edge AI, and see how
-            modern tools can transform old-school tech into a playground for creative experimentation. Get ready
-            for a fast-paced journey where engineering meets innovation and nothing is quite what it seems!
-          </div>
-          <button class="talk-expand-btn" aria-expanded="false">Read more</button>
-        </div>
-
-        <div class="speaker-card">
-          <div class="speaker-header">
-            <img class="speaker-img" src="assets/rsam.jpeg" alt="Rhea Sam" />
-            <div>
-              <div class="speaker-name">Rhea Sam</div>
-              <div class="speaker-org">AI Adoption Specialist, Valtech</div>
-            </div>
-          </div>
-          <div class="talk-title">Build Boldly - AI Adoption in Engineering</div>
-          <div class="talk-summary">
-            Rhea explores AI adoption from the frontline, where technology meets the humans building it.
-            This session is for engineering audiences navigating what AI actually means for how they work,
-            not just what tools they use.
-          </div>
-          <div class="talk-full">
-            <p>We start with the real question: as AI reshapes the landscape, what does engineering actually
-            look like today and where is it heading?</p>
-
-            <p>This session goes beyond theory to examine the people and change behaviour driving or
-            stalling AI adoption in engineering teams. When teams act from fear, they build defensively.
-            When they see AI as an opportunity, they build boldly. The difference isn't capability — it's
-            mindset.</p>
-
-            <p>You'll be introduced to a practical framework for embedding AI through trained practitioners
-            who experiment, validate, and scale what works, and how leaders can set direction while
-            practitioners make it reality on the ground.</p>
-          </div>
-          <button class="talk-expand-btn" aria-expanded="false">Read more</button>
         </div>
 
       </div>
@@ -764,75 +659,7 @@
       else { window.addEventListener('load', () => setTimeout(reveal, 200)); }
     }());
 
-    /* ─── 3. Countdown ─── */
-    (function () {
-      const target = new Date('2026-06-30T16:00:00Z').getTime();
-      const elDays  = document.getElementById('cd-days');
-      const elHours = document.getElementById('cd-hours');
-      const elMins  = document.getElementById('cd-mins');
-      const elSecs  = document.getElementById('cd-secs');
-      const prev = {};
-
-      function pad(n) { return String(n).padStart(2, '0'); }
-
-      function triggerFlip(el, newVal) {
-        el.classList.remove('flip');
-        void el.offsetWidth;
-        el.classList.add('flip');
-        setTimeout(() => { el.textContent = newVal; }, 120); // update at 40% (scaleY==0)
-        el.addEventListener('animationend', () => el.classList.remove('flip'), { once: true });
-      }
-
-      function setNum(el, key, val) {
-        if (prev[key] !== val) { triggerFlip(el, val); prev[key] = val; }
-      }
-
-      function tick() {
-        const diff = Math.max(0, target - Date.now());
-        setNum(elDays,  'days',  pad(Math.floor(diff / 86400000)));
-        setNum(elHours, 'hours', pad(Math.floor((diff % 86400000) / 3600000)));
-        setNum(elMins,  'mins',  pad(Math.floor((diff % 3600000) / 60000)));
-        setNum(elSecs,  'secs',  pad(Math.floor((diff % 60000) / 1000)));
-      }
-
-      tick(); setInterval(tick, 1000);
-    }());
-
-    /* ─── 4. Eventbrite checkout widget ─── */
-    (function () {
-      var script = document.createElement('script');
-      script.src = 'https://www.eventbrite.co.uk/static/widgets/eb_widgets.js';
-      script.onload = function () {
-        window.EBWidgets.createWidget({
-          widgetType: 'checkout',
-          eventId: '1985730555546',
-          themeSettings: {
-            brandColor: '#c41565',
-            fontColor: '#252525',
-            background: '#FFFFFF',
-          },
-          modal: true,
-          modalTriggerElementId: 'eventbrite-widget-modal-trigger-1985730555546',
-          onOrderComplete: function () { console.log('Order complete!'); },
-        });
-      };
-      document.head.appendChild(script);
-    }());
-
-    /* ─── 5. Talk expand/collapse ─── */
-    (function () {
-      document.querySelectorAll('.talk-expand-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          const full = btn.previousElementSibling;
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          full.style.display = expanded ? 'none' : 'block';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          btn.textContent = expanded ? 'Read more' : 'Read less';
-        });
-      });
-    }());
-
-    /* ─── 6. Scroll-in cards ─── */
+    /* ─── 3. Scroll-in cards ─── */
     (function () {
       const cards = document.querySelectorAll('.speaker-card');
       cards.forEach((card, i) => { card.style.transitionDelay = `${i * 0.12}s`; });
@@ -844,7 +671,7 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.12 });
+      }, { threshold: 0.08 });
 
       cards.forEach((card) => observer.observe(card));
     }());
